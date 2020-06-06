@@ -124,7 +124,7 @@ sub set_font {
 
 sub update_font_size {
   my ($self, $font, $delta) = @_;
-  my $regex = qr"(?<=size=)(\d+)";
+  my $regex = qr"(?<=size=)(\d+(?:\.\d+)?)";
   my $current = get_font($self, $font->{'name'});
 
   my ($index) = grep { $fixed[$_] eq $current } 0..$#fixed;
